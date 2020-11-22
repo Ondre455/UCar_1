@@ -42,6 +42,11 @@ namespace UCar
         public class CarID
         {
             public readonly int IDValue;
+
+            public CarID(int id)
+            {
+                IDValue = id;
+            }
             public override string ToString()
             {
                 return IDValue.ToString();
