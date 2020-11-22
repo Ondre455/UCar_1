@@ -10,9 +10,29 @@ namespace UCar
         public string Name { get; }
         public List<Car> cars;
 
+        public Cathegory(string name, CathegoryID id)
+        {
+            Name = name;
+            ID = id;
+        }
+        public void AddCar(Car car)
+        {
+            car.AddCathegory(this);
+        }
+        public override bool Equals(object obj)
+        {
+            var otherCathegory = (Cathegory)obj;
+            return this.ID == otherCathegory.ID;
+        }
         public class CathegoryID
         {
             public readonly int IDValue;
+
+            public CathegoryID(int id)
+            {
+                IDValue = id;
+            }
+
             public override string ToString()
             {
                 return IDValue.ToString();
