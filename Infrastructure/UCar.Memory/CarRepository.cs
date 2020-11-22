@@ -18,5 +18,11 @@ namespace UCar.Memory
                 .Where(c => c.Model.Contains(TitlePart))
                 .ToArray();        
         }
+        public Car[] GetAllByCathegory(Cathegory cathegory)
+        {
+            return cars
+                .Where(c => c.Cathegories.Contains(cathegory))
+                .ToArray();
+        }
     }
 }
