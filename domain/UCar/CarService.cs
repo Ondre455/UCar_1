@@ -6,9 +6,9 @@ namespace UCar
 {
     public class CarService
     {
-        public Car[] GetAllByQuery()
+        public Car[] GetAllByQuery(string query)
         {
-            throw new NotImplementedException();
+            return new[] { new Car("", "", new Car.CarID(14)) };
         }
     }
 }

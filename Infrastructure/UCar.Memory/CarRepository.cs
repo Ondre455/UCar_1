@@ -20,7 +20,8 @@ namespace UCar.Memory
         public Car[] GetByTitle(string TitlePart)
         {
             return cars
-                .Where(c => c.Model.Contains(TitlePart))
+                .Where(c => c.Model.Contains(TitlePart)
+                    || c.Description.Contains(TitlePart))
                 .ToArray();        
         }
         public Car[] GetAllByCathegory(Cathegory cathegory)
