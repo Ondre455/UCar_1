@@ -25,6 +25,7 @@ namespace UCar.Web.Areas.Identity
                     options.SignIn.RequireConfirmedAccount = false;
                     options.Password.RequireLowercase = false;
                     options.Password.RequireUppercase = false;
+                    options.User.AllowedUserNameCharacters += "йцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ ";
                 })
                     .AddEntityFrameworkStores<AuthUsersDbContext>();
             });
