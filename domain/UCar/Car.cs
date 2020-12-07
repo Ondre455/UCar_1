@@ -26,7 +26,7 @@ namespace UCar
         public override bool Equals(object obj)
         {
             Car OtherCar = (Car)obj;
-            return this.ID == OtherCar.ID;
+            return this.ID.Equals(OtherCar.ID);
         }
 
         public override int GetHashCode()
@@ -50,6 +50,11 @@ namespace UCar
             public override string ToString()
             {
                 return IDValue.ToString();
+            }
+            public override bool Equals(object obj)
+            {
+                var id = (CarID)obj;
+                return this.IDValue == id.IDValue;
             }
         }
     }
