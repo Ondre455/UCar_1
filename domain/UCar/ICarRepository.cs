@@ -7,5 +7,7 @@ namespace UCar
     public interface ICarRepository
     {
         Car[] GetByTitle(string TitlePart);
+        void Add(Car car);
+        int Count();
     }
 }
