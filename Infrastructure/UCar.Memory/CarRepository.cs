@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace UCar.Memory
 {
     public class CarRepository : ICarRepository
     {
-        private readonly Car[] cars = new[]
+        private  List<Car> cars = new List<Car>        
         {
             new Car("Toyota Corolla","Недорогая, практичная, надежная", new Car.CarID(1)),
             new Car("BMW M5","Классная, но сломанная",new Car.CarID(2)),
@@ -28,6 +29,14 @@ namespace UCar.Memory
             return cars
                 .Where(c => c.Cathegories.Contains(cathegory))
                 .ToArray();
+        }
+        public void Add (Car car)
+        {
+            cars.Add(car);
+        }
+        public int Count()
+        {
+            return cars.Count;
         }
     }
 }
