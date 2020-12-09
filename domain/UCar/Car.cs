@@ -8,6 +8,7 @@ namespace UCar
         public CarID ID { get; }
         public string Model { get; }
         public string Description { get; }
+        public Price Price { get; }
         public List<Cathegory> Cathegories;
 
         public Car(string model, string description, CarID id)
@@ -58,5 +59,4 @@ namespace UCar
             }
         }
     }
-    
 }

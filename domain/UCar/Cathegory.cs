@@ -24,6 +24,17 @@ namespace UCar
             var otherCathegory = (Cathegory)obj;
             return this.ID == otherCathegory.ID;
         }
+
+        public static bool operator ==(Cathegory cathegory, string Str)
+        {
+            return cathegory.Name == Str;
+        }
+
+        public static bool operator !=(Cathegory cathegory, string Str)
+        {
+            return cathegory.Name != Str;
+        }
+
         public class CathegoryID
         {
             public readonly int IDValue;
