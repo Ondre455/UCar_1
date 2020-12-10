@@ -7,14 +7,19 @@
 
             <div asp-validation-summary="All" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Input.Model"></label>
-                <input type="text" name="Model"/>
+                <label asp-for="Input.Model">Модель машины</label>
+                <input type="text" name="Model" />
                 <span asp-validation-for="Input.Model" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Input.Description"></label>
-                <input type="text" name="Description"/>
+                <label asp-for="Input.Description">Описание машины</label>
+                <input type="text" name="Description" />
                 <span asp-validation-for="Input.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.Price">Цена</label>
+                <input type="number" name="Price" min="0" />
+                <span asp-validation-for="Input.Price" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-primary btn-block">Продать</button>

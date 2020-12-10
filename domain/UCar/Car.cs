@@ -8,14 +8,15 @@ namespace UCar
         public CarID ID { get; }
         public string Model { get; }
         public string Description { get; }
-        public Price Price { get; }
+        public int Price { get; }
         public List<Cathegory> Cathegories;
 
-        public Car(string model, string description, CarID id)
+        public Car(string model, string description, int price, CarID id)
         {
             Model = model;
             Description = description;
             ID = id;
+            Price = price;
         }
 
         public void AddCathegory(Cathegory cathegory)

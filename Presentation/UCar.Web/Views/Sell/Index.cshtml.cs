@@ -24,11 +24,7 @@ namespace UCar.Web.Views.Sell
 
             [Required]
             public string Description { get; set; }
-        }
-        public void OnPost()
-        {
-            var Model = Input.Model;
-            var Description = Input.Description;
+            public string Price { get; set; }
         }
     }
 }

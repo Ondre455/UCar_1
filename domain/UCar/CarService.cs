@@ -6,9 +6,15 @@ namespace UCar
 {
     public class CarService
     {
+        private readonly ICarRepository carRepository;
+
+        public CarService(ICarRepository carRepository)
+        {
+            this.carRepository = carRepository;
+        }
         public Car[] GetAllByQuery(string query)
         {
-            return new[] { new Car("", "", new Car.CarID(14)) };
+            return carRepository.GetByTitle(query);
         }
     }
 }
