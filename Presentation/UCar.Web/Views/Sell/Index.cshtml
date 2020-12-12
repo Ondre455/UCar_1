@@ -1,25 +1,29 @@
-﻿@model UCar.Web.Views.Sell.IndexModel
-@{
+﻿@{
 }
 <div class="col-md-10 offset-md-1">
     <section>
-        <form id="account" method="post">
+        <form id="account" method="post" enctype="multipart/form-data">
 
             <div asp-validation-summary="All" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Input.Model">Модель машины</label>
-                <input type="text" name="Model" />
-                <span asp-validation-for="Input.Model" class="text-danger"></span>
+                <label >Картинка машины</label>
+                <input type="file" name="uploadFile" accept="image/jpeg,image/png"  required />
+                <span  class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Input.Description">Описание машины</label>
-                <input type="text" name="Description" />
-                <span asp-validation-for="Input.Description" class="text-danger"></span>
+                <label >Модель машины</label>
+                <input type="text" name="Model" required />
+                <span  class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Input.Price">Цена</label>
-                <input type="number" name="Price" min="0" />
-                <span asp-validation-for="Input.Price" class="text-danger"></span>
+                <label >Описание машины</label>
+                <input type="text" name="Description" required />
+                <span  class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label >Цена</label>
+                <input type="number" name="Price" min="0" required />
+                <span  class="text-danger"></span>
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-primary btn-block">Продать</button>

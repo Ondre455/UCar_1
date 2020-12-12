@@ -21,4 +21,8 @@
     <ProjectReference Include="..\..\Infrastructure\UCar.Memory\UCar.Memory.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\img\" />
+  </ItemGroup>
+
 </Project>

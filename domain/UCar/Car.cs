@@ -5,18 +5,20 @@ namespace UCar
 {
     public class Car
     {
+        public string Image { get; }
         public CarID ID { get; }
         public string Model { get; }
         public string Description { get; }
         public int Price { get; }
         public List<Cathegory> Cathegories;
 
-        public Car(string model, string description, int price, CarID id)
+        public Car(string model, string description, int price, CarID id, string image)
         {
             Model = model;
             Description = description;
             ID = id;
             Price = price;
+            Image = image;
         }
 
         public void AddCathegory(Cathegory cathegory)
