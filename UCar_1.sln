@@ -14,11 +14,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{5B7D9F0E-B0D1-4158-A188-7D4C86504094}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UCar.Web", "Presentation\UCar.Web\UCar.Web.csproj", "{9D1B4B61-9F39-4E58-AE35-F69A5DB2FE2D}"
-<<<<<<< HEAD
-=======
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UCar.Tests", "UCar.Tests\UCar.Tests.csproj", "{0D1D566F-8BD2-4A46-AD80-EA3C66A526AD}"
->>>>>>> features/Ondre
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UCar.Tests", "UCar.Tests\UCar.Tests.csproj", "{0D1D566F-8BD2-4A46-AD80-EA3C66A526AD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

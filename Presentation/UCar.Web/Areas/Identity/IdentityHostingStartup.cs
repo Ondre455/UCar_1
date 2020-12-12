@@ -20,14 +20,15 @@ namespace UCar.Web.Areas.Identity
                     options.UseSqlServer(
                         context.Configuration.GetConnectionString("AuthUsersDbContextConnection")));
 
-                services.AddDefaultIdentity<AuthUser>(options =>
-                {
-                    options.SignIn.RequireConfirmedAccount = false;
-                    options.Password.RequireLowercase = false;
-                    options.Password.RequireUppercase = false;
-                    options.User.AllowedUserNameCharacters += "йцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ ";
-                })
-                    .AddEntityFrameworkStores<AuthUsersDbContext>();
+                services.AddIdentity<AuthUser,IdentityRole>(options =>
+                 {
+                     options.SignIn.RequireConfirmedAccount = false;
+                     options.Password.RequireLowercase = false;
+                     options.Password.RequireUppercase = false;
+                     options.User.AllowedUserNameCharacters += "йцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ ";
+                 })
+                    .AddEntityFrameworkStores<AuthUsersDbContext>()
+                    .AddDefaultUI();
             });
         }
     }

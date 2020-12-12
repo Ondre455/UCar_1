@@ -22,6 +22,7 @@ namespace UCar.Web.Areas.Identity.Pages.Account
     {
         private readonly SignInManager<AuthUser> _signInManager;
         private readonly UserManager<AuthUser> _userManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
 
@@ -29,12 +30,14 @@ namespace UCar.Web.Areas.Identity.Pages.Account
             UserManager<AuthUser> userManager,
             SignInManager<AuthUser> signInManager,
             ILogger<RegisterModel> logger,
-            IEmailSender emailSender)
+            IEmailSender emailSender,
+            RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
+            _roleManager = roleManager;
         }
 
         [BindProperty]
@@ -85,6 +88,7 @@ namespace UCar.Web.Areas.Identity.Pages.Account
             {
                 var user = new AuthUser { UserName = Input.FirstName+" "+Input.LastName, Email = Input.Email,FirstName=Input.FirstName,LastName=Input.LastName };
                 var result = await _userManager.CreateAsync(user, Input.Password);
+                var roleresult = await _userManager.AddToRoleAsync(user, "Пользователь");
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
