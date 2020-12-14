@@ -16,7 +16,7 @@ namespace UCar.Web.Controllers
         }
         public IActionResult Index(string query)
         {
-            var cars = CarService.GetAllByQuery(query);
+            var cars = CarService.GetAllByQuery(query).Where(c => c.IsConfirned == true&c.IsSold==false).ToArray(); ;
             return View(cars);
         }
     }

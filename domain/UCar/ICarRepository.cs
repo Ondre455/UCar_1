@@ -9,5 +9,7 @@ namespace UCar
         Car[] GetByTitle(string TitlePart);
         void Add(Car car);
         int Count();
+        Car[] GetAll();
+        void Delete(Car car);
     }
 }

@@ -11,14 +11,18 @@ namespace UCar
         public string Description { get; }
         public int Price { get; }
         public List<Cathegory> Cathegories;
+        public bool IsConfirned { get; set; }
+        public bool IsSold { get; set; }
 
-        public Car(string model, string description, int price, CarID id, string image)
+        public Car(string model, string description, int price, CarID id, string image,bool isconfirmed,bool issold)
         {
             Model = model;
             Description = description;
             ID = id;
             Price = price;
             Image = image;
+            IsConfirned = isconfirmed;
+            IsSold = issold;
         }
 
         public void AddCathegory(Cathegory cathegory)
