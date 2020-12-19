@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace UCar
 {
@@ -7,14 +8,18 @@ namespace UCar
     {
         public string Image { get; }
         public CarID ID { get; }
+        [Display(Name="Модель")]
         public string Model { get; }
+        [Display(Name = "Описание")]
         public string Description { get; }
+        [Display(Name = "Цена ")]
         public int Price { get; }
-        public List<Cathegory> Cathegories;
         public bool IsConfirned { get; set; }
         public bool IsSold { get; set; }
+        [Display(Name ="Владелец")]
+        public string Owner { get; set; }
 
-        public Car(string model, string description, int price, CarID id, string image,bool isconfirmed,bool issold)
+        public Car(string model, string description, int price, CarID id, string image,bool isconfirmed,bool issold,string owner)
         {
             Model = model;
             Description = description;
@@ -23,12 +28,7 @@ namespace UCar
             Image = image;
             IsConfirned = isconfirmed;
             IsSold = issold;
-        }
-
-        public void AddCathegory(Cathegory cathegory)
-        {
-            Cathegories.Add(cathegory);
-            cathegory.cars.Add(this);
+            Owner = owner;
         }
 
         public override bool Equals(object obj)

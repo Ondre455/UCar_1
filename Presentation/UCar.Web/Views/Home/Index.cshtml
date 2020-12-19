@@ -1,8 +1,10 @@
 ﻿@model IEnumerable<UCar.Car>
+@using Microsoft.AspNetCore.Identity
+@using UCar.Web.Areas.Identity.Data;
+@inject UserManager<AuthUser> UserManager
 @{
     ViewData["Title"] = "Home Page";
 }
-
 <form action="/search" method="get">
     <input type="text" name="query" value="" />
     <button type="submit">Найти</button>
@@ -33,7 +35,7 @@
         {
             <tr>
                 <td>
-                    <img class="img-thumbnail" src="@item.Image" />
+                    <img class="img-thumbnail" src="@item.Image" width="300" height="300" />
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Model)
@@ -45,7 +47,7 @@
                     @Html.DisplayFor(modelItem => item.Price)
                 </td>
                 <td>
-                    @Html.ActionLink("Купить", "BuyCar", "Sell", new { id=item.ID.IDValue })
+                    @Html.ActionLink("Купить", "BuyCar", "Sell", new { id = item.ID.IDValue, owner =UserManager.GetUserName(User) })
                 </td>
             </tr>
         }

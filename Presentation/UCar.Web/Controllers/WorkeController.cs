@@ -29,6 +29,7 @@ namespace UCar.Web.Controllers
             var car=carRepository.GetAll().Where(c => c.ID.IDValue == id).ToArray()[0];
             carRepository.Delete(car);
             car.IsConfirned = true;
+            car.Owner = "Автосалон";
             carRepository.Add(car);
             return LocalRedirect("~/Worke/OperationComplited");
         }

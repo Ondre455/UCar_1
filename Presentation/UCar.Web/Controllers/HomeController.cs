@@ -13,17 +13,17 @@ namespace UCar.Web.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        public ICarRepository car;
+        private readonly ICarRepository carRepository;
 
         public HomeController(ILogger<HomeController> logger, ICarRepository car)
         {
-            this.car = car;
+            this.carRepository = car;
             _logger = logger;
         }
 
         public IActionResult Index()
         {
-            var cars = car.GetAll().Where(c=>c.IsConfirned==true&c.IsSold==false).ToArray() ;
+            var cars = carRepository.GetAll().Where(c=>c.IsConfirned==true&c.IsSold==false).ToArray() ;
             return View(cars);
         }
 

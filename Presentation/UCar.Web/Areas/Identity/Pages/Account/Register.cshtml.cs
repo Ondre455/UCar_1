@@ -86,7 +86,7 @@ namespace UCar.Web.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new AuthUser { UserName = Input.FirstName+" "+Input.LastName, Email = Input.Email,FirstName=Input.FirstName,LastName=Input.LastName };
+                var user = new AuthUser { UserName = Input.Email, Email = Input.Email,FirstName=Input.FirstName,LastName=Input.LastName };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 var roleresult = await _userManager.AddToRoleAsync(user, "Пользователь");
                 if (result.Succeeded)

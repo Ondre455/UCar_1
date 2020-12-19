@@ -8,15 +8,15 @@ namespace UCar.Web.Controllers
 {
     public class SearchController : Controller
     {
-        private readonly CarService CarService;
+        private readonly ICarRepository carRepository;
 
-        public SearchController(CarService carService)
+        public SearchController(ICarRepository carRepository)
         {
-            CarService = carService;
+            this.carRepository=carRepository;
         }
         public IActionResult Index(string query)
         {
-            var cars = CarService.GetAllByQuery(query).Where(c => c.IsConfirned == true&c.IsSold==false).ToArray(); ;
+            var cars = carRepository.GetByTitle(query).Where(c => c.IsConfirned == true&c.IsSold==false).ToArray(); ;
             return View(cars);
         }
     }

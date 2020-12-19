@@ -8,7 +8,7 @@ namespace UCar
     {
         Car[] GetByTitle(string TitlePart);
         void Add(Car car);
-        int Count();
+        int GetLastCarIDValue();
         Car[] GetAll();
         void Delete(Car car);
     }
