@@ -29,7 +29,6 @@ namespace UCar.Web
         {
             services.AddControllersWithViews();
             services.AddSingleton<ICarRepository, CarRepository>();
-            services.AddSingleton<CarService>();
             services.AddRazorPages();
         }
 

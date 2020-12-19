@@ -32,7 +32,7 @@ namespace UCar.Memory
         }
         public int GetLastCarIDValue()
         {
-            return cars.Count;
+            return cars.Last().ID.IDValue;
         }
         public Car[] GetAll()
         {
