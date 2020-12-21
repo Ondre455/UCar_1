@@ -30,9 +30,9 @@ namespace UCar.Memory
         {
             cars.Add(car);
         }
-        public int GetLastCarIDValue()
+        public int FormCarID()
         {
-            return cars.Last().ID.IDValue;
+            return cars.Last().ID.IDValue*cars.Count();
         }
         public Car[] GetAll()
         {
