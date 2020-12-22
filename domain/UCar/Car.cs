@@ -95,7 +95,7 @@ namespace UCar
         /// <returns>Строка, представляющая машину</returns>
         public override string ToString()
         {
-            return Model + "_" + Description + "_" + ID.ToString() + "_" + Price.ToString() + "_" + Image + "_" + IsConfirned.ToString() + "_" + IsSold.ToString() + "_" + Owner+"\n";
+            return Model + "_" + Description + "_" + ID.ToString() + "_" + Price.ToString() + "_" + Image + "_" + IsConfirned.ToString() + "_" + IsSold.ToString() + "_" + Owner;
         }
 
         /// <summary>

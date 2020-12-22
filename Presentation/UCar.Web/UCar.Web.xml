@@ -1,0 +1,359 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UCar.Web</name>
+    </assembly>
+    <members>
+        <member name="T:UCar.Web.Areas.Identity.Pages.Account.RegisterModel">
+            <summary>
+            модель регистрации
+            </summary>
+        </member>
+        <member name="M:UCar.Web.Areas.Identity.Pages.Account.RegisterModel.#ctor(Microsoft.AspNetCore.Identity.UserManager{UCar.Web.Areas.Identity.Data.AuthUser},Microsoft.AspNetCore.Identity.SignInManager{UCar.Web.Areas.Identity.Data.AuthUser},Microsoft.Extensions.Logging.ILogger{UCar.Web.Areas.Identity.Pages.Account.RegisterModel},Microsoft.AspNetCore.Identity.UI.Services.IEmailSender,Microsoft.AspNetCore.Identity.RoleManager{Microsoft.AspNetCore.Identity.IdentityRole})">
+            <summary>
+            конструктор модели регистрации
+            </summary>
+            <param name="userManager">Для работы с БД ролей</param>
+            <param name="signInManager">Для поиска в БД</param>
+            <param name="logger"></param>
+            <param name="emailSender"></param>
+            <param name="roleManager"></param>
+        </member>
+        <member name="P:UCar.Web.Areas.Identity.Pages.Account.RegisterModel.Input">
+            <summary>
+            Модель ввода
+            </summary>
+        </member>
+        <member name="P:UCar.Web.Areas.Identity.Pages.Account.RegisterModel.ReturnUrl">
+            <summary>
+            Возвращаемая ссылка
+            </summary>
+        </member>
+        <member name="P:UCar.Web.Areas.Identity.Pages.Account.RegisterModel.ExternalLogins">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:UCar.Web.Areas.Identity.Pages.Account.RegisterModel.InputModel">
+            <summary>
+            Модель ввода
+            </summary>
+        </member>
+        <member name="P:UCar.Web.Areas.Identity.Pages.Account.RegisterModel.InputModel.FirstName">
+            <summary>
+            Имя
+            </summary>
+        </member>
+        <member name="P:UCar.Web.Areas.Identity.Pages.Account.RegisterModel.InputModel.LastName">
+            <summary>
+            Фамилия
+            </summary>
+        </member>
+        <member name="P:UCar.Web.Areas.Identity.Pages.Account.RegisterModel.InputModel.Email">
+            <summary>
+            Электронная почта
+            </summary>
+        </member>
+        <member name="P:UCar.Web.Areas.Identity.Pages.Account.RegisterModel.InputModel.Password">
+            <summary>
+            Пароль
+            </summary>
+        </member>
+        <member name="P:UCar.Web.Areas.Identity.Pages.Account.RegisterModel.InputModel.ConfirmPassword">
+            <summary>
+            подтверждение пароля
+            </summary>
+        </member>
+        <member name="M:UCar.Web.Areas.Identity.Pages.Account.RegisterModel.OnGetAsync(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="returnUrl"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UCar.Web.Areas.Identity.Pages.Account.RegisterModel.OnPostAsync(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="returnUrl"></param>
+            <returns></returns>
+        </member>
+        <member name="T:UCar.Web.Controllers.HomeController">
+            <summary>
+            Контроллер домашней страницы
+            </summary>
+        </member>
+        <member name="M:UCar.Web.Controllers.HomeController.#ctor(Microsoft.Extensions.Logging.ILogger{UCar.Web.Controllers.HomeController},UCar.ICarRepository)">
+            <summary>
+            Конструктор для контроллера домашней страницы
+            </summary>
+            <param name="logger"></param>
+            <param name="car"></param>
+        </member>
+        <member name="M:UCar.Web.Controllers.HomeController.Index">
+            <summary>
+            Возвращает представление домашней страницы
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UCar.Web.Controllers.HomeController.Privacy">
+            <summary>
+            Возвращает окно приватности
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UCar.Web.Controllers.HomeController.Error">
+            <summary>
+            Возвращает окно ошибки
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:UCar.Web.Controllers.RolesController">
+            <summary>
+            контроллер ролей
+            </summary>
+        </member>
+        <member name="M:UCar.Web.Controllers.RolesController.#ctor(Microsoft.AspNetCore.Identity.RoleManager{Microsoft.AspNetCore.Identity.IdentityRole},Microsoft.AspNetCore.Identity.UserManager{UCar.Web.Areas.Identity.Data.AuthUser})">
+            <summary>
+            Конструктор контроллера ролей
+            </summary>
+            <param name="roleManager"></param>
+            <param name="userManager"></param>
+        </member>
+        <member name="M:UCar.Web.Controllers.RolesController.Index">
+            <summary>
+            Возвращает представление
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UCar.Web.Controllers.RolesController.Create">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UCar.Web.Controllers.RolesController.Create(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UCar.Web.Controllers.RolesController.Delete(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UCar.Web.Controllers.RolesController.UserList">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UCar.Web.Controllers.RolesController.Edit(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UCar.Web.Controllers.RolesController.Edit(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            
+            </summary>
+            <param name="userId"></param>
+            <param name="roles"></param>
+            <returns></returns>
+        </member>
+        <member name="T:UCar.Web.Controllers.SearchController">
+            <summary>
+            контроллер поиска
+            </summary>
+        </member>
+        <member name="M:UCar.Web.Controllers.SearchController.#ctor(UCar.ICarRepository)">
+            <summary>
+            Конструктор контроллера поиска
+            </summary>
+            <param name="carRepository"></param>
+        </member>
+        <member name="M:UCar.Web.Controllers.SearchController.Index(System.String)">
+            <summary>
+            Возвращает список автомобилей с помощью метода GetBuQuery из CarRepository
+            </summary>
+            <param name="query"></param>
+            <returns></returns>
+        </member>
+        <member name="T:UCar.Web.Controllers.SellController">
+            <summary>
+            Контроллер купле-продажи
+            </summary>
+        </member>
+        <member name="M:UCar.Web.Controllers.SellController.Index(System.String,System.String,System.Int32,Microsoft.AspNetCore.Http.IFormFile,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="Model"></param>
+            <param name="Description"></param>
+            <param name="Price"></param>
+            <param name="uploadFile"></param>
+            <param name="owner"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UCar.Web.Controllers.SellController.#ctor(UCar.ICarRepository,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            Конструктор
+            </summary>
+            <param name="carRepository"></param>
+            <param name="appEnvironment"></param>
+        </member>
+        <member name="M:UCar.Web.Controllers.SellController.Index">
+            <summary>
+            Возвращает представление
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UCar.Web.Controllers.SellController.BuyCar(System.Int32,System.String)">
+            <summary>
+            Приобрести автомобиль
+            </summary>
+            <param name="id"></param>
+            <param name="owner"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UCar.Web.Controllers.SellController.Undo(System.Int32)">
+            <summary>
+            Откатить изменения
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:UCar.Web.Controllers.WorkeController">
+            <summary>
+            контроллер для сотрудников
+            </summary>
+        </member>
+        <member name="M:UCar.Web.Controllers.WorkeController.#ctor(UCar.ICarRepository)">
+            <summary>
+            Конструктор для контроллера
+            </summary>
+            <param name="carRepository"></param>
+        </member>
+        <member name="M:UCar.Web.Controllers.WorkeController.OperationComplited">
+            <summary>
+            Завершение операции
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UCar.Web.Controllers.WorkeController.DoConfirmCar">
+            <summary>
+            
+            </summary>
+            <returns>Список неподтвержденных авто</returns>
+        </member>
+        <member name="M:UCar.Web.Controllers.WorkeController.Confirm(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns>Подтверждение автомобиля</returns>
+        </member>
+        <member name="M:UCar.Web.Controllers.WorkeController.Delete(System.Int32)">
+            <summary>
+            Удаление машиины из репозитория
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UCar.Web.Controllers.WorkeController.Index">
+            <summary>
+            Возвращает представление
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UCar.Web.Controllers.WorkeController.SolledCars">
+            <summary>
+            Список проданных машин
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:UCar.Web.Program">
+            <summary>
+            класс запускающий WEB-приложение
+            </summary>
+        </member>
+        <member name="M:UCar.Web.Program.Main(System.String[])">
+            <summary>
+            основной метод
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:UCar.Web.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            Строит WEB-приложение
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:UCar.Web.Startup">
+            <summary>
+            Конфигурация проекта
+            </summary>
+        </member>
+        <member name="M:UCar.Web.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Конструктор
+            </summary>
+            <param name="configuration">конфигурация</param>
+        </member>
+        <member name="P:UCar.Web.Startup.Configuration">
+            <summary>
+            Свойство конфигурации
+            </summary>
+        </member>
+        <member name="M:UCar.Web.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Конфигурирует внутренние сервисы
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:UCar.Web.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+        <member name="T:ChangeRoleViewModel">
+            <summary>
+            Модель изменения роли
+            </summary>
+        </member>
+        <member name="P:ChangeRoleViewModel.UserId">
+            <summary>
+            ID юзера, чья роль будет изменена
+            </summary>
+        </member>
+        <member name="P:ChangeRoleViewModel.UserEmail">
+            <summary>
+            почта юзера
+            </summary>
+        </member>
+        <member name="P:ChangeRoleViewModel.AllRoles">
+            <summary>
+            все роли
+            </summary>
+        </member>
+        <member name="P:ChangeRoleViewModel.UserRoles">
+            <summary>
+            пользовательские роли
+            </summary>
+        </member>
+        <member name="M:ChangeRoleViewModel.#ctor">
+            <summary>
+            Изменение роли пользователя
+            </summary>
+        </member>
+    </members>
+</doc>

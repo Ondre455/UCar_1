@@ -9,20 +9,44 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace  UCar.Web.Controllers
 {
-    //[Authorize(Roles = "Сотрудник")]
+
+    /// <summary>
+    /// контроллер ролей
+    /// </summary>
+    [Authorize(Roles = "Сотрудник")]
     public class RolesController : Controller
     {
         RoleManager<IdentityRole> _roleManager;
         UserManager<AuthUser> _userManager;
         
+        /// <summary>
+        /// Конструктор контроллера ролей
+        /// </summary>
+        /// <param name="roleManager"></param>
+        /// <param name="userManager"></param>
         public RolesController(RoleManager<IdentityRole> roleManager, UserManager<AuthUser> userManager)
         {
             _roleManager = roleManager;
             _userManager = userManager;
         }
+
+        /// <summary>
+        /// Возвращает представление
+        /// </summary>
+        /// <returns></returns>
         public IActionResult Index() => View(_roleManager.Roles.ToList());
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public IActionResult Create() => View();
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> Create(string name)
         {
@@ -43,7 +67,12 @@ namespace  UCar.Web.Controllers
             }
             return View(name);
         }
-
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> Delete(string id)
         {
@@ -55,8 +84,17 @@ namespace  UCar.Web.Controllers
             return RedirectToAction("Index");
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public IActionResult UserList() => View(_userManager.Users.ToList());
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
         public async Task<IActionResult> Edit(string userId)
         {
             // получаем пользователя
@@ -78,6 +116,13 @@ namespace  UCar.Web.Controllers
 
             return NotFound();
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <param name="roles"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> Edit(string userId, List<string> roles)
         {

@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UCar.Memory</name>
+    </assembly>
+    <members>
+        <member name="T:UCar.Memory.CarRepository">
+            <summary>
+            Класс хранилища Автомобилей;
+            Реализует соответствующий интерфейс
+            По паттерну Singletone существует только 1 на весь проект
+            </summary>
+        </member>
+        <member name="M:UCar.Memory.CarRepository.#ctor">
+            <summary>
+            Создает РЕпозиторий машин
+            </summary>
+        </member>
+        <member name="M:UCar.Memory.CarRepository.GetByTitle(System.String)">
+            <summary>
+            должен возвращать список автомобилей по названию
+            </summary>
+            <param name="TitlePart"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UCar.Memory.CarRepository.Add(UCar.Car)">
+            <summary>
+            добавляет автомобиль в репозиторий
+            </summary>
+            <param name="car"></param>
+        </member>
+        <member name="M:UCar.Memory.CarRepository.GetLastCarIDValue">
+            <summary>
+            Возвращает id последнего автомобиля
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UCar.Memory.CarRepository.GetAll">
+            <summary>
+            возвращает все автомобили
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UCar.Memory.CarRepository.Delete(UCar.Car)">
+            <summary>
+            удаляет автомобиль из репозитория
+            </summary>
+            <param name="car">Этот автомобиль будет удален</param>
+        </member>
+    </members>
+</doc>
