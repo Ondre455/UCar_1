@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace  UCar.Web.Controllers
 {
-    [Authorize(Roles ="Сотрудник")]
+    //[Authorize(Roles = "Сотрудник")]
     public class RolesController : Controller
     {
         RoleManager<IdentityRole> _roleManager;

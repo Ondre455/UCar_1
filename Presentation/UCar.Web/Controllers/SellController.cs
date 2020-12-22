@@ -10,11 +10,24 @@ using System.Threading.Tasks;
 
 namespace UCar.Web.Controllers
 {
+    /// <summary>
+    /// Контроллер купле-продажи
+    /// </summary>
     [Authorize]
     public class SellController: Controller
     {
         private readonly ICarRepository CarRepository;
         IWebHostEnvironment AppEnvironment;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Model"></param>
+        /// <param name="Description"></param>
+        /// <param name="Price"></param>
+        /// <param name="uploadFile"></param>
+        /// <param name="owner"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Index(string Model,string Description,int Price, IFormFile uploadFile,string owner)
         {
@@ -28,16 +41,34 @@ namespace UCar.Web.Controllers
             CarRepository.Add(car);
             return LocalRedirect("~/Home");
         }
+
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// <param name="carRepository"></param>
+        /// <param name="appEnvironment"></param>
         public SellController(ICarRepository carRepository, IWebHostEnvironment appEnvironment)
         {
             CarRepository = carRepository;
             AppEnvironment = appEnvironment;
         }
+
+        /// <summary>
+        /// Возвращает представление
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult Index()
         {
             return View();
         }
+
+        /// <summary>
+        /// Приобрести автомобиль
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="owner"></param>
+        /// <returns></returns>
         public IActionResult BuyCar(int id,string owner)
         {
             var car = CarRepository.GetAll().Where(c => c.ID.IDValue == id).ToArray()[0];
@@ -47,6 +78,12 @@ namespace UCar.Web.Controllers
             CarRepository.Add(car);
             return View();
         }
+
+        /// <summary>
+        /// Откатить изменения
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public IActionResult Undo(int id)
         {
             var car = CarRepository.GetAll().Where(c => c.ID.IDValue == id).ToArray()[0];
