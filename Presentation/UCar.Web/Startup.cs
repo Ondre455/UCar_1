@@ -15,16 +15,29 @@ using UCar.Web.Data;
 
 namespace UCar.Web
 {
+    /// <summary>
+    /// Конфигурация проекта
+    /// </summary>
     public class Startup
     {
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// <param name="configuration">конфигурация</param>
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
+        /// <summary>
+        /// Свойство конфигурации
+        /// </summary>
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+        /// <summary>
+        /// Конфигурирует внутренние сервисы
+        /// </summary>
+        /// <param name="services"></param>
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
@@ -32,7 +45,11 @@ namespace UCar.Web
             services.AddRazorPages();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="app"></param>
+        /// <param name="env"></param>
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())

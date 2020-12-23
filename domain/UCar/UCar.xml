@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UCar</name>
+    </assembly>
+    <members>
+        <member name="T:UCar.Car">
+            <summary>
+            Класс Автомобиль
+            обозначакт представление машины в системе
+            </summary>
+        </member>
+        <member name="P:UCar.Car.Image">
+            <summary>
+            Ссылка на картинку
+            </summary>
+        </member>
+        <member name="P:UCar.Car.ID">
+            <summary>
+            айди машины
+            </summary>
+        </member>
+        <member name="P:UCar.Car.Model">
+            <summary>
+            Модель машины
+            </summary>
+        </member>
+        <member name="P:UCar.Car.Description">
+            <summary>
+            описание машины
+            </summary>
+        </member>
+        <member name="P:UCar.Car.Price">
+            <summary>
+            цена машины
+            </summary>
+        </member>
+        <member name="P:UCar.Car.IsConfirned">
+            <summary>
+            до проверки машины false иначе true
+            </summary>
+        </member>
+        <member name="P:UCar.Car.IsSold">
+            <summary>
+            до продажи машины false иначе true
+            </summary>
+        </member>
+        <member name="P:UCar.Car.Owner">
+            <summary>
+            Владелец автомобиля
+            определяет, кому был продан автомобиль,
+            или у кого он был куплен
+            </summary>
+        </member>
+        <member name="M:UCar.Car.#ctor(System.String,System.String,System.Int32,UCar.Car.CarID,System.String,System.Boolean,System.Boolean,System.String)">
+            <summary>
+            создает машину с заданными параметрами
+            </summary>
+            <param name="model"></param>
+            <param name="description"></param>
+            <param name="price"></param>
+            <param name="id"></param>
+            <param name="image"></param>
+            <param name="isconfirmed"></param>
+            <param name="issold"></param>
+            <param name="owner"></param>
+        </member>
+        <member name="M:UCar.Car.#ctor(System.String)">
+            <summary>
+            другой способ создать машину
+            </summary>
+            <param name="str"></param>
+        </member>
+        <member name="M:UCar.Car.ToString">
+            <summary>
+            создает представление машины в виде строки
+            </summary>
+            <returns>Строка, представляющая машину</returns>
+        </member>
+        <member name="T:UCar.Car.CarID">
+            <summary>
+            класс айди, 
+            создан для расширения проекта, когда не только машины будут иметь его
+            </summary>
+        </member>
+        <member name="F:UCar.Car.CarID.IDValue">
+            <summary>
+            значение айди
+            </summary>
+        </member>
+        <member name="M:UCar.Car.CarID.#ctor(System.Int32)">
+            <summary>
+            конструктор для айди
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:UCar.Car.CarID.ToString">
+            <summary>
+            
+            </summary>
+            <returns>Значение айди как строку</returns>
+        </member>
+        <member name="M:UCar.Car.CarID.Equals(System.Object)">
+            <summary>
+            Сравнивает айди 2 машин
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:UCar.ICarRepository">
+            <summary>
+            интерфейс для репозитория автомобилей
+            </summary>
+        </member>
+        <member name="M:UCar.ICarRepository.GetByTitle(System.String)">
+            <summary>
+            должен возвращать список автомобилей по названию
+            </summary>
+            <param name="TitlePart"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UCar.ICarRepository.Add(UCar.Car)">
+            <summary>
+            добавляет автомобиль в репозиторий
+            </summary>
+            <param name="car"></param>
+        </member>
+        <member name="M:UCar.ICarRepository.GetLastCarIDValue">
+            <summary>
+            Возвращает id последнего автомобиля
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UCar.ICarRepository.GetAll">
+            <summary>
+            возвращает все автомобили
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UCar.ICarRepository.Delete(UCar.Car)">
+            <summary>
+            удаляет автомобиль из репозитория
+            </summary>
+            <param name="car">Этот автомобиль будет удален</param>
+        </member>
+    </members>
+</doc>
