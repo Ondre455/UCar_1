@@ -21,6 +21,7 @@ namespace UCar
         /// </summary>
         /// <param name="car"></param>
         void Add(Car car);
+<<<<<<< HEAD
 
         /// <summary>
         /// Возвращает id последнего автомобиля
@@ -32,6 +33,9 @@ namespace UCar
         /// возвращает все автомобили
         /// </summary>
         /// <returns></returns>
+=======
+        int FormCarID();
+>>>>>>> d280dfe082d8ee9f0e9525ee3f09984dd524930e
         Car[] GetAll();
 
         /// <summary>

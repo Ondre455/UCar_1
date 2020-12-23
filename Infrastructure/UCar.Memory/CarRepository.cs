@@ -75,14 +75,18 @@ namespace UCar.Memory
             string path = Path.Combine(Environment.CurrentDirectory, "Cars.txt");
             File.AppendText(path).WriteLine(car.ToString());
         }
+<<<<<<< HEAD
 
         /// <summary>
         /// Возвращает id последнего автомобиля
         /// </summary>
         /// <returns></returns>
         public int GetLastCarIDValue()
+=======
+        public int FormCarID()
+>>>>>>> d280dfe082d8ee9f0e9525ee3f09984dd524930e
         {
-            return cars.Last().ID.IDValue;
+            return cars.Last().ID.IDValue*cars.Count();
         }
 
         /// <summary>

@@ -37,7 +37,7 @@ namespace UCar.Web.Controllers
             {
                  uploadFile.CopyTo(fileStream);
             }
-            var car = new Car(Model, Description,Price, new Car.CarID(CarRepository.GetLastCarIDValue() + 1),path,false,false,owner);
+            var car = new Car(Model, Description,Price, new Car.CarID(CarRepository.FormCarID() + 1),path,false,false,owner);
             CarRepository.Add(car);
             return LocalRedirect("~/Home");
         }
@@ -52,12 +52,16 @@ namespace UCar.Web.Controllers
             CarRepository = carRepository;
             AppEnvironment = appEnvironment;
         }
+<<<<<<< HEAD
 
         /// <summary>
         /// Возвращает представление
         /// </summary>
         /// <returns></returns>
         [HttpGet]
+=======
+       [HttpGet]
+>>>>>>> d280dfe082d8ee9f0e9525ee3f09984dd524930e
         public IActionResult Index()
         {
             return View();
