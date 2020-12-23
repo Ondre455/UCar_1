@@ -20,7 +20,7 @@ namespace UCar.Memory
         /// </summary>
         public CarRepository()
         {
-            var path = @"D:\\UCar\UCar_1\Cars.txt";
+            string path = Path.Combine(Environment.CurrentDirectory, "Cars.txt");
             if (File.Exists(path))
             {
                 cars = new List<Car>();
@@ -65,14 +65,15 @@ namespace UCar.Memory
                 .ToArray();        
         }
 
-        /// <summary>
+        /// <summary>s
         /// добавляет автомобиль в репозиторий
         /// </summary>
         /// <param name="car"></param>
         public void Add (Car car)
         {
             cars.Add(car);
-            File.AppendText(@"D:\\UCar\UCar_1\Cars.txt").WriteLine(car.ToString());
+            string path = Path.Combine(Environment.CurrentDirectory, "Cars.txt");
+            File.AppendText(path).WriteLine(car.ToString());
         }
 
         /// <summary>
@@ -99,7 +100,7 @@ namespace UCar.Memory
         /// <param name="car">Этот автомобиль будет удален</param>
         public void Delete(Car car)
         {
-            var path = @"D:\\UCar\UCar_1\Cars.txt";
+            string path = Path.Combine(Environment.CurrentDirectory, "Cars.txt");
             cars.Remove(car);
             File.Delete(path);
             var list = new List<string>();

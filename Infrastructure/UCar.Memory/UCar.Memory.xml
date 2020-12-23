@@ -24,7 +24,7 @@
             <returns></returns>
         </member>
         <member name="M:UCar.Memory.CarRepository.Add(UCar.Car)">
-            <summary>
+            <summary>s
             добавляет автомобиль в репозиторий
             </summary>
             <param name="car"></param>
